@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @usine.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @usine.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @usine.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @usine.country %>
+</p>
+
+<%= link_to 'Edit', edit_usine_path(@usine) %> |
+<%= link_to 'Back', usines_path %>
