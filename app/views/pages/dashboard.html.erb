@@ -1,0 +1,164 @@
+<div class="container dashboard">
+  <h1>Dashboard</h1>
+  <p>Welcome,<br>azer@azer.com is a really cool email! Well done!</p>
+  <div id="map"></div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-bar-chart-o fa-fw"></i>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div id="chart-1" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
+          new Chartkick.AreaChart("chart-1", [["Washington","1789-04-29","1797-03-03"],["Adams","1797-03-03","1801-03-03"],["Jefferson","1801-03-03","1809-03-03"]], {});
+        </script>
+
+      </div>
+      <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-bar-chart-o fa-fw"></i>Table
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Annual</th>
+                      <th>Jan</th>
+                      <th>Feb</th>
+                      <th>Mar</th>
+                      <th>Apr</th>
+                      <th>May</th>
+                      <th>Jun</th>
+                      <th>Jul</th>
+                      <th>Aug</th>
+                      <th>Sep</th>
+                      <th>Oct</th>
+                      <th>Nov</th>
+                      <th>Dec</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><p>6.06</p></td>
+                      <td><p>5.0</p></td>
+                      <td><p>5.34</p></td>
+                      <td><p>5.94</p></td>
+                      <td><p>6.11</p></td>
+                      <td><p>6.36</p></td>
+                      <td><p>7.43</p></td>
+                      <td><p>7.48</p></td>
+                      <td><p>6.65</p></td>
+                      <td><p>6.81</p></td>
+                      <td><p>5.82</p></td>
+                      <td><p>5.11</p></td>
+                      <td><p>4.67</p></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.col-lg-4 (nested) -->
+            <div class="col-lg-8">
+              <div id="morris-bar-chart"></div>
+            </div>
+            <!-- /.col-lg-8 (nested) -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.panel-body -->
+      </div>
+    <!-- /.panel -->
+    </div>
+  </div>
+</div>
+
+
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
+<!-- Include Dependencies of GMaps for Rails gem -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer_compiled.js"></script>
+<script src="https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"></script>
+<script src="https://cdn.rawgit.com/apneadiving/Google-Maps-for-Rails/master/js_compilation/gmaps_google.js"></script>
+
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
+    handler.buildMap({ internal: { id: 'map' } }, function(){
+      markers = handler.addMarkers([
+      {
+        "lat": 43.3027392,
+        "lng": 5.3765816,
+        "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+      },
+      {
+        "lat": 52.3431438,
+        "lng": 4.8291689,
+        "infowindow": "<h1>Amsterdam</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/011/thumbnail/amsterdam.jpg?1453219893' height='200'></p>"
+      },
+      {
+        "lat": 44.8418706,
+        "lng": -0.5706669,
+        "infowindow": "<h1>Bordeaux</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/005/thumbnail/bordeaux.jpg?1445962618' height='200'></p>"
+      },
+      {
+        "lat": 50.8474433,
+        "lng": 4.3591849,
+        "infowindow": "<h1>Brussels</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/002/thumbnail/brussels.jpg?1445520592' height='200'></p>"
+      },
+      {
+        "lat": 55.699662,
+        "lng": 12.532918,
+        "infowindow": "<h1>Copenhagen</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/013/thumbnail/k%C3%B8benhavn-bg.jpg?1454509826' height='200'></p>"
+      },
+      {
+        "lat": 50.6333542,
+        "lng": 3.0203766,
+        "infowindow": "<h1>Lille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/003/thumbnail/lille.jpg?1445520692' height='200'></p>"
+      },
+      {
+        "lat": 38.7324346,
+        "lng": -9.1423852,
+        "infowindow": "<h1>Lisbon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/009/thumbnail/8130866554_0faf8af6e6_k.jpg?1447424100' height='200'></p>"
+      },
+      {
+        "lat": 51.5213244,
+        "lng": -0.0766771,
+        "infowindow": "<h1>London</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/014/thumbnail/2722715933_ed5a01fa23_o.jpg?1457434940' height='200'></p>"
+      },
+      {
+        "lat": 45.764043,
+        "lng": 4.835659,
+        "infowindow": "<h1>Lyon</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/016/thumbnail/1024px-Lyon_basilique_de_fourvie%CC%80re.jpg?1463049986' height='200'></p>"
+      },
+      {
+        "lat": 47.218371,
+        "lng": -1.553621,
+        "infowindow": "<h1>Nantes</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/012/thumbnail/nantes.jpg?1453388206' height='200'></p>"
+      },
+      {
+        "lat": 48.8648482,
+        "lng": 2.3798534,
+        "infowindow": "<h1>Paris</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/001/thumbnail/15079403417_371f698d27_k.jpg?1445521241' height='200'></p>"
+      },
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+  })
+</script>
+
+<script src="/assets/application-24382ada93b6cad10e5263a3a6af6cd6480345005b1d8fd1e36fdecba063c314.js"></script>
+
+
