@@ -1,8 +1,10 @@
 class UsinesController < ApplicationController
   before_action :set_usine, only: [:show, :edit, :update, :destroy]
 
+
   # GET /usines
   # GET /usines.json
+
   def index
     @usines = Usine.all
   end
