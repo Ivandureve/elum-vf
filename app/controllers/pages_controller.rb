@@ -19,8 +19,14 @@ class PagesController < ApplicationController
     @jan = JSON.parse(sun)
     @version = @jan["version"]
     @user = current_user
+    @usine = Usine.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@usine) do |usine, marker|
+      marker.lat usine.latitude
+      marker.lng usine.longitude
+    end
 
-    @usines = Usine.all
 
   end
 end
+
+
