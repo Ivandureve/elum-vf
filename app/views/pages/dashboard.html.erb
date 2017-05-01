@@ -12,11 +12,11 @@
       <p><%= @user.first_name %></p>
       <p><%= @user.last_name %></p>
       <p><%= @user.email %></p>
+
         <% @usine.each do |u| %>
-        <p><%= u.name %></p>
-        <p><%= u.url %></p>
-        <p>http://api.openweathermap.org/data/2.5/weather?q=<%= u.city %><%= u.country %>&appid=6cfa110201b58f2e3f882aa175cb4032["main"["humidity"]]</p>
+        <p><%= u.pressure %></p>
         <% end %>
+
     </div>
   </div>
   <br>
@@ -64,8 +64,7 @@
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
-          <%= geo_chart Usine.group(:country).count %>
-      </div>
+<!--  -->      </div>
       <!-- /.panel-body -->
     </div>
     <!-- /.panel -->
