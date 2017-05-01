@@ -8,10 +8,6 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
-gem 'country_select'
-
-
-
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -21,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "chartkick"
+gem 'country_select'
 
 gem 'geocoder'
 gem "coffee-rails"
