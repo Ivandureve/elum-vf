@@ -71,6 +71,6 @@ class UsinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usine_params
-      params.require(:usine).permit(:name, :address, :zip, :city, :country, :description)
+      params.require(:usine).permit(:name, :address, :zip, :city, :country, :description, :url)
     end
 end
