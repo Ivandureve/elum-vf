@@ -1,17 +1,16 @@
-<div class="container">
-    <% if current_user %>
-    <h1>Bienvenue <%= current_user.email %>,</h1>
-    <% else %>
-    <h1>Bienvenue,</h1>
-    <% end %>
+  <div class="container text-center padding-15">
+      <% if current_user %>
+      <h1>Bienvenue <%= current_user.first_name %> !</h1>
+      <% else %>
+      <h1>Bienvenue !</h1>
+      <% end %>
 
-    <h4 align="justify">sur la premiere plateforme d'échange de titre de SCPI sur le marché secondaire. <br>Nous somme la premiere plateforme en France a mettre en relation achetteurs et vendeur de part de SCPI.</h4>
-    <% if current_user %>
-    <%=  link_to "Dashboard", pages_dashboard_path, class: "btn btn-primary btn-lg"%>
-    <% else %>
-    <%=  link_to "Sign up!", new_user_registration_path, class: "btn btn-primary btn-lg"%>
-    <% end %>
-</div>
-
+      <h4 align="text-center">Elum est la premiere plateforme bla bla bla.<br>Nous somme la premiere plateforme en France blablabla </h4>
+      <% if current_user %>
+      <%=  link_to "Dashboard", pages_dashboard_path, class: "btn btn-primary btn-lg"%>
+      <% else %>
+      <%=  link_to "Sign up!", new_user_registration_path, class: "btn btn-primary btn-lg"%>
+      <% end %>
+  </div>
 
 

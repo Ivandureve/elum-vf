@@ -12,11 +12,11 @@
       <p><%= @user.first_name %></p>
       <p><%= @user.last_name %></p>
       <p><%= @user.email %></p>
+
         <% @usine.each do |u| %>
-        <p><%= u.name %></p>
-        <p><%= u.url %></p>
-        <p>http://api.openweathermap.org/data/2.5/weather?q=<%= u.city %><%= u.country %>&appid=6cfa110201b58f2e3f882aa175cb4032["main"["humidity"]]</p>
+        <p><%= u.pressure %></p>
         <% end %>
+
     </div>
   </div>
   <br>
@@ -64,10 +64,7 @@
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
-          <div id="chart-1" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-          new Chartkick.AreaChart("chart-1", [["Washington","1789-04-29","1797-03-03"],["Adams","1797-03-03","1801-03-03"],["Jefferson","1801-03-03","1809-03-03"]], {});
-        </script>
-      </div>
+<!--  -->      </div>
       <!-- /.panel-body -->
     </div>
     <!-- /.panel -->
@@ -129,14 +126,17 @@
         </div>
         <!-- /.panel-body -->
       </div>
+
+
     <!-- /.panel -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <i class="fa fa-bar-chart-o fa-fw"></i>Usines
         </div>
         <!-- /.panel-heading -->
-        <div class="panel-body">
-            <table>
+      <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -159,6 +159,7 @@
               </tbody>
             </table>
           </div>
+        </div>
       </div>
     </div>
   </div>

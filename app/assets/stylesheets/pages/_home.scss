@@ -25,6 +25,11 @@ Sydney is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic,
 /*--------------------------------------------------------------
 Social
 --------------------------------------------------------------*/
+
+.padding-15{
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
 .social-menu-widget {
   padding: 0;
   margin: 0 auto;
@@ -379,10 +384,15 @@ Repeatable Patterns
        -moz-box-sizing: border-box;
         box-sizing: border-box;
   }
+  html {
+  height: 100%;
+}
   body {
-    font: 14px/24px "Source Sans Pro", sans-serif;
-    background: #fff;
+    min-height: 100%;
+    background: linear-gradient(135deg, rgba(255, 102, 183, 1) 0%, rgba(214, 54, 0, 1) 50%);
+    background-size: cover;
     color: #767676;
+    font: 14px/24px "Source Sans Pro", sans-serif;
   }
   a {
     text-decoration: none;

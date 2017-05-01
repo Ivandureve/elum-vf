@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
   <title>Elum Energy</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -12,13 +11,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-
-
-
     <%= javascript_include_tag "application" %>
-
-
     <%= yield(:after_js) %>
     <%= yield %>
   </body>
